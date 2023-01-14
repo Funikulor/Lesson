@@ -1,0 +1,14 @@
+int main() 
+{
+	int mass[5] = {};
+	int el = 0;
+	int suma = 0;
+	for (int i = 0; i < 5; i++) 
+	{	
+		cout << "Enter a number -> ";
+		cin >> el; '\n';
+		mass[i] = el;
+		suma += el;
+	}
+	cout << suma;
+}
