@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int mass[8] = { 4,8,2,3,9,5,8,6 };
+	float suma = 0;
+	for (int i = 0; i < 8; i++) 
+	{
+		suma += mass[i];
+	}
+	float arifmetic = suma / 8;
+	cout << arifmetic;
+	return 0;
+}
