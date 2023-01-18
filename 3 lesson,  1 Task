@@ -1,0 +1,31 @@
+#include "iostream"
+#include <string>
+using namespace std;
+
+int main()
+{
+	string str[255];
+	int i = 0;
+	int count = 1;
+	string symvol = " ";
+	while (true)
+	{
+		cin >> symvol;
+		str[i] = symvol;
+		if (str[i] == "0")
+		{
+			break;
+		}
+		i += 1;
+	}
+	str[i] = '\0';
+	int dlina = str->length();
+	for (int j = 0; j < dlina; j++)
+	{
+		cout << str[j];
+		if (str[j] == " ") count++;
+	}
+	cout << count;
+	
+	return 0;
+}
