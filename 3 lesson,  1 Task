@@ -22,7 +22,6 @@ int main()
 	int dlina = str->length();
 	for (int j = 0; j < dlina; j++)
 	{
-		cout << str[j];
 		if (str[j] == " ") count++;
 	}
 	cout << count;
