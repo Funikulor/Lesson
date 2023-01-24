@@ -4,11 +4,11 @@ int main()
 {
 	int mass1[5] = {};
 	int mass2[10] = {};
-	Fill(mass1[5], 5);
-	Fill(mass2[10], 10);
+	Fill(mass1, 5);
+	Fill(mass2, 10);
 	return 0;
 }
-void Fill(int massive, int size)
+void Fill(int massive[], int size)
 {
 	int el;
 	for (int i = 0; i < size; i++)
@@ -16,7 +16,7 @@ void Fill(int massive, int size)
 		cin >> el;
 		if (el < 0 or el > 100)
 		{
-			massive[&i] = el;
+			massive[i] = el;
 		}
 		else
 		{
