@@ -1,0 +1,83 @@
+#include <iostream>;
+using namespace std;
+void Fill(int mass[5][5]);
+void Searchmaxi(int mass[5][5]);
+void Searchmini(int mass[5][5]);
+int main()
+{
+	int mass[5][5] = {};
+	Fill(mass);
+	Searchmaxi(mass);
+	Searchmini(mass);
+}
+void Fill(int mass[5][5])
+{
+	setlocale(LC_ALL, "Rus");
+	cout << "Заполните двумерный массив элементами со значениями от 0 до 100:\n";
+	int el;
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			cin >> el;
+			if (el >= 0 and el < 100) 
+			{
+				mass[i][j] = el;
+			}
+			else 
+			{
+				cout << "Неправильно. Сказано же ввести от 0 до 100.\n";
+			}
+		}
+	}
+	cout << "[\n";
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (j == 0)
+			{
+				cout << "   [" << mass[i][j] << ", ";
+			}
+			if (j == 4)
+			{
+				cout << mass[i][j] << "]\n";
+			}
+			if (j == 1 or j == 2 or j == 3)
+			{
+				cout << mass[i][j]<< ", ";
+			}
+		}
+	}
+	cout << "]\n";
+}
+void Searchmaxi(int mass[5][5])
+{
+	int max = mass[0][0];
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (mass[i][j] > max) 
+			{
+				max = mass[i][j];
+			}
+		}
+	}
+	cout << "Максимальный элемент -> " << max << '\n';
+}
+void Searchmini(int mass[5][5])
+{
+	int min = mass[0][0];
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (mass[i][j] < min)
+			{
+				min = mass[i][j];
+			}
+		}
+	}
+	cout << "Минимальное значение -> " << min;
+}
