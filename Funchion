@@ -1,27 +1,63 @@
 #include <iostream>
 using namespace std;
+void Fill(int mass1[], int);
+void out(int mass1[], int mass2[]);
 int main() 
 {
 	int mass1[5] = {};
 	int mass2[10] = {};
 	Fill(mass1, 5);
+	cout << "Теперь заполните второй массив.\n";
 	Fill(mass2, 10);
+	out(mass1, mass2);
 	return 0;
 }
 void Fill(int massive[], int size)
 {
+	setlocale(LC_ALL, "Russian");
 	int el;
 	for (int i = 0; i < size; i++)
 	{
 		cin >> el;
-		if (el < 0 or el > 100)
+		if (el > 0 and el < 100)
 		{
 			massive[i] = el;
 		}
 		else
 		{
-			cout << "Неправильно.Введите значение в диопозоне от 0 до 100";
+			cout << "Неправильно. Введите значение в диопозоне от 0 до 100.\n";
 			i += -1;
 		}
 	}
+}
+void out(int mass1[], int mass2[])
+{
+	cout << "Первый массив -> [";
+	for (int j = 0; j < 5; j++) 
+	{
+		if (j == 4) 
+		{
+			cout << mass1[j];
+		}
+		else 
+		{
+			cout << mass1[j] << ", ";
+		}
+
+	}
+	cout <<"]\n";
+	cout << "Второй массив -> [";
+	for (int j = 0; j < 10; j++)
+	{
+		if (j == 9) 
+		{
+			cout << mass2[j];
+		}
+		else 
+		{
+			cout << mass2[j] << ", ";
+		}
+
+	}
+	cout << "]";
 }
