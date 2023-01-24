@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	int mass1[5] = {};
+	int mass2[10] = {};
+	Fill(mass1[5], 5);
+	Fill(mass2[10], 10);
+	return 0;
+}
+void Fill(int massive, int size)
+{
+	int el;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> el;
+		if (el < 0 or el > 100)
+		{
+			massive[&i] = el;
+		}
+		else
+		{
+			cout << "Неправильно.Введите значение в диопозоне от 0 до 100";
+			i += -1;
+		}
+	}
+}
