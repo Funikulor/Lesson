@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int Bytes(int i, int count = 0);
+int main() 
+{
+	int i, count = 0;
+	cin >> i;
+	if (i % 2 == 0) 
+	{
+		count -= 1;
+	}
+	Bytes(i, count);
+}
+int Bytes(int i, int count) 
+{
+	if (i == 0)
+	{
+		cout << count;
+		return 0;
+	}
+	return Bytes(i /= 2, count += 1);
+}
