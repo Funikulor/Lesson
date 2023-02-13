@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <ctime>
+#include <windows.h>
+using namespace std;
+int main() 
+{
+	setlocale(LC_ALL, "Rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	ofstream write;
+	write.open("D:/Рабочий стол/workers.txt", ios::app);
+	string surname, name, level;
+	cin >> surname >> name >> level;
+	time_t seconds = time(NULL);
+	tm* timeinfo = localtime(&seconds);
+	cin.get();
+	if (write.is_open())
+	{
+		 write << surname << " " << name << " " << level << " --- " << asctime(timeinfo) << endl;
+	}
+	write.close();
+	return 0;
+
+}
