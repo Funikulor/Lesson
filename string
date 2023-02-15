@@ -1,0 +1,43 @@
+#include <iostream>
+#include <windows.h>
+#include <string.h>
+#include <string>
+using namespace std;
+int main() 
+{
+	setlocale(LC_ALL, "Rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	string text, word, wordd;
+	int choice, count = 0;
+	while (true) 
+	{
+		cout << endl << "Выберите что хотите сделать." << endl << "1 - Ввести текст" << endl << "0 - Выйти из программы" << endl;
+		cin >> choice;
+		if (choice == 1)
+		{
+			cout << "Введите текст:" << endl;
+			cin >> text;
+			cout << "Теперь введите слово повторы, которого будем искать." << endl;
+			cin >> wordd;
+			for (int i = 0; i < text.size(); i++)
+			{
+				getline(cin, word, ' ');
+				if (word == wordd) 
+				{
+					count++;
+				}
+			}
+			cout << "Количество повторов в тексте -> " << count << endl;
+		}
+		if (choice == 0) 
+		{
+			cout << "Программа успешно завершена!";
+			break;
+		}
+		else 
+		{
+			cout << "Нет такой команды! Попробуйте снова.";
+		}
+	}
+}
